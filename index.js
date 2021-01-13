@@ -45,18 +45,5 @@ class Formatter {
 
   }
 
-  static pluralize(string){
-    const wordsForChanging = ['There', 'Where', 'Here']
-    const splittedString = string.split(" ")
-    const changeFunction = splittedString.map(function (word, index, sentence) {
-      if (wordsForChanging.includes(word)) {
-        if (sentence[index + 1] === "is") {
-          return word + "'s"
-        }
-      } else {
-        return word
-      }
-    })
-    return changeFunction.join(" ")
-  }
+
 }
