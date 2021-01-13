@@ -42,4 +42,16 @@ describe( "Formatter", () => {
       expect( Formatter.titleize( "in the night kitchen" ) ).to.equal( "In the Night Kitchen" )
     } )
   } )
+
+  describe( "pluralize", () => {
+    it( "is a static method", () => {
+      expect( Formatter.pluralize( "There is a lot of data here" ) ).to.not.throw
+    } )
+
+    it( "pluralizes all relevant words in a sentence e.g 'there is', 'where is', 'here is'", () => {
+      expect( Formatter.pluralize( "There is a lot of data here" ) ).to.equal( "There's a lot of data here" )
+      expect( Formatter.pluralize( "Where is my pencil" ) ).to.equal( "Where's my pencil" )
+      expect( Formatter.pluralize( "Here is your pencil" ) ).to.equal( "Here's your pencil" )
+    } )
+  } )
 } )
